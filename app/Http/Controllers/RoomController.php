@@ -14,7 +14,7 @@ class RoomController extends Controller
         $password = $request->password;
 
         if(!Room::where('name', $name)->where('password', $password)->exists()){
-            abort(404);
+          return redirect()->route('room.join')->with('message', 'ゲーム名またはパスワードが一致しません');
         }
 
         $room = Room::where('name', $name)->where('password', $password)->first();

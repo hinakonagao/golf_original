@@ -17,6 +17,11 @@
   <div class="form_wrapper">
     <form action="{{ route('room.check') }}" method="POST">
         @csrf
+      @if(session('message'))
+      <div class="alert alert-danger">
+        {{ session('message') }}
+      </div>
+      @endif
       <div class="form_item">
         <p>ゲーム名</p>
         <input type="text" name="name" placeholder="○○カントリー △△コンペ"></input>
