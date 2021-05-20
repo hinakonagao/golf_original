@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL</key>
+	<string>mailto:mysql://b88617cf826591:ac52326c@us-cdbr-east-03.cleardb.com/heroku_d2473cc0f40aaf4?reconnect=true</string>
+</dict>
+</plist>
