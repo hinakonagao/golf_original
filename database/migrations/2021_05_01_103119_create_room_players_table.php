@@ -16,7 +16,12 @@ class CreateRoomPlayersTable extends Migration
         Schema::create('room_players', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->integer("room_id")->comment('スコアボードのテーブル');
+            $table->unsignedBigInteger("room_id")->comment('スコアボードのテーブル');
+            //外部キー制約
+            $table->foreign('room_id')
+                    ->references('id')
+                    ->on('rooms')
+                    ->onDelete('cascade');
             $table->integer("user_id")->nullable()->comment('ユーザーID');
             $table->string("name")->nullable()->comment('プレイヤー名');
             $table->integer("hole_1")->nullable()->comment('ホールのスコア1')->default('4');
@@ -39,11 +44,7 @@ class CreateRoomPlayersTable extends Migration
             $table->integer("hole_18")->nullable()->comment('ホールのスコア18')->default('4');
             $table->timestamps();
 
-            //外部キー制約
-            $table->foreign('room_id')
-                    ->references('id')
-                    ->on('rooms')
-                    ->onDelete('cascade');
+
         });
     }
 
