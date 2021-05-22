@@ -206,7 +206,7 @@ header h4 {
 }
 .main {
   margin: 0 auto;
-  display: table;
+  display: flex;
 }
 .score_card {
   -ms-writing-mode: tb-lr;
