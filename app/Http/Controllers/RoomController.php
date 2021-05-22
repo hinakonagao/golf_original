@@ -31,6 +31,10 @@ class RoomController extends Controller
         ]);
         $room_id = $room->id;
 
+        // if(Room::where('name', $name)->exists()){
+        //   return redirect()->route('room.create')->with('message', 'このゲーム名は既に使用されています');
+        // }
+
         //RoomPlayerにデータを挿入する
         //1人目
         $room_player_1 = RoomPlayer::create([
