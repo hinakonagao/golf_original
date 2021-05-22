@@ -225,6 +225,7 @@ header h4 {
   text-align: center;
   height: 100%;
   border:solid 0px;
+  padding: 0;
 }
 .score_card span {
   -ms-writing-mode : lr-tb;
