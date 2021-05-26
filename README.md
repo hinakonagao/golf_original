@@ -1,62 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+#Golf Score Share
+ゴルフコースを回る際、一緒に回るメンバーが各々のスマホから同じスコアカードを見たり、スコアを書き込めるアプリです。
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+#DEMO
 
-## About Laravel
+#アプリ概要
+Web上でスコアカードを簡単に共有し、組のメンバーの誰でもスコアを書き込むことができます。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+通常はコースを回る間、各々でスコアカードを付けておき、終了後みんなでスコアを確認し合います。
+スコアカードを個人で保存するスマホアプリや、同じスマホアプリをダウンロードしている人同士であればスコアカードを共有できるサービスはありますが、誰でも準備不要ですぐに使えるサービスは見つかりませんでした。
+この「Golf score share」であれば、コースを回るその時にwebページを開くだけで、誰でも簡単に使うことが出来ます。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#開発のきっかけ
+・私自身ゴルフが好きでコースを回ることがあり、こんなサービスが欲しいなと思っていた。
+・ゴルフ仲間にも聞いてみたところ、機能豊富なスマホアプリよりも、気軽に使えるシンプルなスコアカードをスマホで使えると便利。プレー中に共有できると更に便利という声を複数人から聞くことができた。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#使い方
+##スコアカード作成者
+1. start a new gameをタップ
+2. ゲーム名・パスワードを決め、start a new gameをタップしてスコアカードを作成する
+※過去に使われているゲーム名は使えません。
 
-## Learning Laravel
+##スコアカードへの参加者
+1. join the game をタップ
+2. 作成者が登録したのと同じゲーム名・パスワードを入力し、join the gameをタップしてスコアカードに参加する
+※ゲーム名・パスワードの一致が確認できなけれなエラーになります。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##スコアカードの使い方
+作成者・参加者の誰でも、スコアカードに書き込むことが出来ます。
+スコアカードに書き込んだ時点で、自動的にデータは更新されます。他の人が更新した内容を自分の画面に反映させる為には、updateボタンを押してください。
+(例)Aさんがスコアカードにhole1のスコアを入力。→Bさんが自分のスマホのupdateボタンを押すと、Aさんが入力したスコアがBさんの画面にも反映する。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#使用技術
+HTML/CSS/javascript/jQuery/PHP/Laravel/MySQL/Ajax
 
-## Laravel Sponsors
+#今後のアップデート予定箇所
+・RoomPlayerテーブルにTotalカラムを追加する
+現在スコアのTotalはhole1~18の合計値をリロードの度に計算しているので、テーブルにTotalカラムを作っておくことで計算処理をなくす。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+・updateボタンを押さなくても、データが更新された際はビューに反映するように
+現在Ajaxを使って非同期通信でデータの保存を行なっているものの、更新されたデータを別の人の画面に反映するにはリロードする必要がある。
 
-### Premium Partners
+・コンペ機能を追加する
+現在のGolf Score Shareは一緒にコースを回るメンバーでスコアカードを共有するという内容だが、
+コンペを作成→コンペの中に複数のスコアカードを作成→コンペ参加者は別の組のスコアカード進捗も見られる
+という機能を追加したい。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+・ログイン・ユーザー登録機能を追加する
+現在の仕様では、過去のスコアカードを見るには再度同じゲーム名・パスワードでスコアカードに入る必要がある。
+ログイン・ユーザー登録をすることにより、自分がプレーした過去のスコアカードを確認できるようにしたい。
