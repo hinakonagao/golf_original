@@ -13,6 +13,8 @@ class RoomController extends Controller
         $name = $request->name;
         $password = $request->password;
 
+        \Log::debug($name);
+
         if(!Room::where('name', $name)->where('password', $password)->exists()){
           return redirect()->route('room.join')->with('message', 'ゲーム名またはパスワードが一致しません');
         }
@@ -25,49 +27,49 @@ class RoomController extends Controller
 
     //作成する
     public function create(Request $request){
+        $name = $request->name;
+
+        \Log::debug($name);
+
+        if(Room::where('name', $name)->exists()){
+          return redirect()->route('room.create')->with('message', 'このゲーム名は既に使用されています');
+        }
+
         $room = Room::create([
           'name' => $request->name,
           'password' => $request->password,
         ]);
         $room_id = $room->id;
 
-        // if(Room::where('name', $name)->exists()){
-        //   return redirect()->route('room.create')->with('message', 'このゲーム名は既に使用されています');
-        // }
 
         //RoomPlayerにデータを挿入する
         //1人目
         $room_player_1 = RoomPlayer::create([
-            "name" => 'プレーヤー１',
+            "name" => '名前を入力',
             "room_id" => $room_id, //Roomから受け取ったid
             "user_id" => 1,
           ]);
           //2人目
           $room_player_2 = RoomPlayer::create([
-            "name" => 'プレーヤー２',
+            "name" => '名前を入力',
             "room_id" => $room_id, //Roomから受け取ったid
             "user_id" => 2,
           ]);
           //3人目
           $room_player_3 = RoomPlayer::create([
-            "name" => 'プレーヤー３',
+            "name" => '名前を入力',
             "room_id" => $room_id, //Roomから受け取ったid
             "user_id" => 3,
           ]);
           //4人目
           $room_player_4 = RoomPlayer::create([
-            "name" => 'プレーヤー４',
+            "name" => '名前を入力',
             "room_id" => $room_id, //Roomから受け取ったid
             "user_id" => 4,
           ]);
 
-        // 勉強メモ
-        // $param = config('test');
-        // $env = config('test.app_name');
-
-        \Log::debug('ほげげ');
-        \Log::debug($room_id);
-        \Log::debug($room_player_1->id);
+        // \Log::debug($room_id);
+        // \Log::debug($room_player_1->id);
 
         return redirect()->route('room.into', [ "id" => $room_id ]);
     }
@@ -78,7 +80,7 @@ class RoomController extends Controller
         // \Log::debug($id);
         // \Log::debug($room);
       $room_players = RoomPlayer::where('room_id', '=', $id)->get();
-        \Log::debug($room_players);
+        // \Log::debug($room_players);
         // \Log::debug($room_players[0]->id);
       return view('room')->with([
         "room" => $room,

@@ -16,7 +16,7 @@
   </div>
   <div class="form_wrapper">
     <form action="{{ route('room.check') }}" method="POST">
-        @csrf
+    @csrf
       @if(session('message'))
       <div class="alert alert-danger">
         {{ session('message') }}

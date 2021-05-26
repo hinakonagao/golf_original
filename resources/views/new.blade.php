@@ -17,7 +17,7 @@
 
   <div class="form_wrapper">
     <form action="{{ route('room.create') }}" method="POST">
-        @csrf
+    @csrf
       @if(session('message'))
       <div class="alert alert-danger">
         {{ session('message') }}
