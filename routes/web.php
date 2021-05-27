@@ -31,5 +31,5 @@ Route::post('/golf/join', 'App\Http\Controllers\RoomController@join')->name("roo
 
 Route::get('/golf/room/{id}', 'App\Http\Controllers\RoomController@into')->name("room.into");
 
-Route::post('/golf/room/update', 'App\Http\Controllers\RoomPlayerController@methods')->name("room.update");
+Route::post('/golf/room/update', 'App\Http\Controllers\RoomPlayerController@update')->name("room.update");
     //Ajaxで実行するメソッドのルーティング

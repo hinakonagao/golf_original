@@ -10,10 +10,10 @@ class RoomController extends Controller
 {
     //参加する
     public function join(Request $request){
+        \DB::enableQueryLog();
         $name = $request->name;
         $password = $request->password;
-
-        \Log::debug($name);
+        // \Log::debug($name);
 
         if(!Room::where('name', $name)->where('password', $password)->exists()){
           return redirect()->route('room.join')->with('message', 'ゲーム名またはパスワードが一致しません');
@@ -22,14 +22,18 @@ class RoomController extends Controller
         $room = Room::where('name', $name)->where('password', $password)->first();
         $room_id = $room->id;
 
+        \Log::debug(\DB::getQueryLog());
+
         return redirect()->route('room.into', [ "id" => $room_id ]);
     }
 
     //作成する
     public function create(Request $request){
-        $name = $request->name;
+        //クエリログを取るようにする
+        \DB::enableQueryLog();
 
-        \Log::debug($name);
+        $name = $request->name;
+        // \Log::debug($name);
 
         if(Room::where('name', $name)->exists()){
           return redirect()->route('room.create')->with('message', 'このゲーム名は既に使用されています');
@@ -71,20 +75,27 @@ class RoomController extends Controller
         // \Log::debug($room_id);
         // \Log::debug($room_player_1->id);
 
+        //クエリログを表示する
+        \Log::debug(\DB::getQueryLog());
+
         return redirect()->route('room.into', [ "id" => $room_id ]);
     }
 
     //作成・参加どちらの場合も通る
     public function into($id){
-      $room = Room::find($id);
+        \DB::enableQueryLog();
+
+        $room = Room::find($id);
         // \Log::debug($id);
         // \Log::debug($room);
-      $room_players = RoomPlayer::where('room_id', '=', $id)->get();
+        $room_players = RoomPlayer::where('room_id', '=', $id)->get();
         // \Log::debug($room_players);
         // \Log::debug($room_players[0]->id);
-      return view('room')->with([
-        "room" => $room,
-        "room_players" => $room_players
-      ]);
+        \Log::debug(\DB::getQueryLog());
+
+        return view('room')->with([
+          "room" => $room,
+          "room_players" => $room_players
+        ]);
     }
 }
