@@ -10,6 +10,7 @@
 
 @section('content')
 <div class="background">
+
   <div class="top_header">
     <h2 class="title">Golf Score Share</h2>
     <a href="/golf" class="home_btn"><span>> Homeへ</span></a>

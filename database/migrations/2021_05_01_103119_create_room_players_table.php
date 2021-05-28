@@ -43,8 +43,6 @@ class CreateRoomPlayersTable extends Migration
             $table->integer("hole_17")->nullable()->comment('ホールのスコア17');
             $table->integer("hole_18")->nullable()->comment('ホールのスコア18');
             $table->timestamps();
-
-
         });
     }
 

@@ -86,32 +86,28 @@
 $(function(){
 
   $('input').on('change', function() {
-    console.log('name_changeメソッド！');
     const room = @json($room);
     const room_players = @json($room_players);
     let id = $(this).data('id');
     let column = $(this).data('column');
     let data = $(this).val();
-    console.log(data);
-    console.log(id);
-    console.log(column);
 
     $.ajax({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },//headersを書かないととエラーになる
-      type:'POST',
-      url:'/golf/room/update', // ルーティングで設定したURL
+      },
+      type: 'POST',
+      url: '/golf/room/update',
       dataType: 'json',
       data: {
         id: id,
         column: column,
         data: data,
       }
-    }).done(function(res){
+    }).done(function(res) {
       // 成功したときのコールバック
       console.log("Ajax成功");
-    }).fail(function(jqXHR, textStatus, errorThrown){
+    }).fail(function(jqXHR, textStatus, errorThrown) {
       // 失敗したときのコールバック
       console.log("Ajax失敗");
     }).always(function() {

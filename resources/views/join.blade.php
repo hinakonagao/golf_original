@@ -10,10 +10,12 @@
 
 @section('content')
 <div class="background">
+
   <div class="top_header">
     <h2 class="title">Golf Score Share</h2>
     <a href="/golf" class="home_btn"><span>> Homeへ</span></a>
   </div>
+  
   <div class="form_wrapper">
     <form action="{{ route('room.check') }}" method="POST">
     @csrf

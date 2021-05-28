@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/golf', function(){
+Route::get('/golf', function () {
     return view('top');
 })->name("room.top");
 
-Route::get('/golf/new', function(){
+Route::get('/golf/new', function () {
     return view('new');
 })->name("room.new");
 
 Route::post('/golf/new', 'App\Http\Controllers\RoomController@create')->name("room.create");
 
-Route::get('/golf/join', function(){
+Route::get('/golf/join', function () {
     return view('join');
 })->name("room.join");
 
