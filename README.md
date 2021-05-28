@@ -49,8 +49,6 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 ・MySQL
 <br><br>  
 
-## ER図
-https://github.com/hinakonagao/golf-score-share/issues/2#issuecomment-850383626
 
 ## 工夫した点
 ・Laravelのルーティング<br>
