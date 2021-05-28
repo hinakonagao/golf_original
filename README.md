@@ -42,7 +42,11 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 <br><br>
 
 ## 使用技術
-HTML / CSS / javascript / jQuery / PHP / Laravel / MySQL / Ajax
+・Laravel 8.38.0 
+・PHP 7.3.11
+・jQuery 3.6.0
+・Ajax
+・MySQL
 <br><br>  
 
 ## 工夫した点
