@@ -66,7 +66,7 @@ class RoomController extends Controller
         $room_id = $room->id;
 
         return redirect()->route('room.into', [ "id" => $room_id ]);
-  }
+    }
 
     //作成者・参加者のどちらも通る処理
     public function into($id){
