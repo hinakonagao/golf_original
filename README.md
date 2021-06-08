@@ -9,7 +9,7 @@ http://golf-score-share.herokuapp.com/golf <br>
 ![画面収録 2021-06-08 20 35 23](https://user-images.githubusercontent.com/78901624/121182036-a181ef80-c89d-11eb-8fab-ce67b91d543f.gif)
 <br>
 
-■スコアカード編集画面
+■スコアカード編集画面<br>
 ![画面収録 2021-06-08 20 48 40](https://user-images.githubusercontent.com/78901624/121182588-3553bb80-c89e-11eb-974d-bbd2be589a82.gif)
 
 <br><br>
