@@ -51,7 +51,8 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 <br><br>  
 
 ## ER図
-https://github.com/hinakonagao/golf-score-share/issues/3#issue-906132626
+![ER図](https://user-images.githubusercontent.com/78901624/120046262-c4fe9c00-c04c-11eb-88f7-e395432fb4cd.png)
+
 
 ## 工夫した点
 ・Laravelのルーティング<br>
