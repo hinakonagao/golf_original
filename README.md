@@ -43,8 +43,8 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 <br><br>
 
 ## 使用技術
-フロントエンド：JavaScript/jQuery 3.6.0/Ajax<br>
-バックエンド：PHP 7.3.11/Laravel 8.38.0<br>
+フロントエンド：JavaScript / jQuery 3.6.0 / Ajax<br>
+バックエンド：PHP 7.3.11 / Laravel 8.38.0<br>
 データベース：MySQL<br>
 インフラ：Heroku<br>
 バージョン管理：Git
