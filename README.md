@@ -47,7 +47,7 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 バックエンド：PHP 7.3.11 / Laravel 8.38.0<br>
 データベース：MySQL<br>
 インフラ：Heroku<br>
-バージョン管理：Git
+バージョン管理：Git / GitHub
 <br><br>  
 
 ## ER図
