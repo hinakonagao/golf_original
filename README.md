@@ -1,11 +1,11 @@
 # Golf Score Share （個人開発アプリ）
-ゴルフコースを回る際、一緒に回るメンバーが各々のスマホから同じスコアカードを見たり、スコアを書き込めるアプリです。<br>
+ゴルフコースを回る際、一緒に回るメンバーが各々のスマホから共有のスコアカードを見たり、スコアを書き込めるアプリです。<br>
 http://golf-score-share.herokuapp.com/golf <br>
 ※スマホもしくはタブレットでご利用ください。
 <br><br>  
 
 ## DEMO
-coming soon ...
+![画面収録 2021-06-08 21 19 28](https://user-images.githubusercontent.com/78901624/121184196-ce370680-c89f-11eb-8729-daf893e55e2e.gif)
 <br><br>
     
 
@@ -42,16 +42,21 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 (例)Aさんがスコアカードにhole1のスコアを入力。→Bさんが自分のスマホのupdateボタンを押すと、Aさんが入力したスコアがBさんの画面にも反映する。
 <br><br>
 
+## 制作期間
+1ヶ月
+<br><br>
+
 ## 使用技術
-・Laravel 8.38.0 
-・PHP 7.3.11
-・jQuery 3.6.0
-・Ajax
-・MySQL
+フロントエンド：JavaScript / jQuery 3.6.0 / Ajax<br>
+バックエンド：PHP 7.3.11 / Laravel 8.38.0<br>
+データベース：MySQL<br>
+インフラ：Heroku<br>
+バージョン管理：Git / GitHub
 <br><br>  
 
 ## ER図
-![ER図](https://github.com/hinakonagao/golf-score-share/issues/3#issue-906132626)
+![ER図](https://user-images.githubusercontent.com/78901624/120046262-c4fe9c00-c04c-11eb-88f7-e395432fb4cd.png)
+
 
 ## 工夫した点
 ・Laravelのルーティング<br>
