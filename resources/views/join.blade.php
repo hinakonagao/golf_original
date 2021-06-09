@@ -15,10 +15,11 @@
     <h2 class="title">Golf Score Share</h2>
     <a href="/golf" class="home_btn"><span>> Homeへ</span></a>
   </div>
-  
+
   <div class="form_wrapper">
     <form action="{{ route('room.check') }}" method="POST">
     @csrf
+      <!--  -->
       @if(session('message'))
       <div class="alert alert-danger">
         {{ session('message') }}

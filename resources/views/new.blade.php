@@ -19,6 +19,7 @@
   <div class="form_wrapper">
     <form action="{{ route('room.create') }}" method="POST">
     @csrf
+      <!-- コメント入れる -->
       @if(session('message'))
       <div class="alert alert-danger">
         {{ session('message') }}

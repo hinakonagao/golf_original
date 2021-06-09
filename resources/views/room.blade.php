@@ -41,7 +41,7 @@
       </tr>
       @foreach($room_players as $room_player)
       <tr class="player">
-        <td><input class="name" data-id="{{ $room_player->id }}" data-column="name" type="text" value="{{ $room_player->name }}" maxlength='8'></td>
+        <td><input class="name" data-id="{{ $room_player->id }}" data-column="name" type="text" placeholder="名前を入力" value="{{ $room_player->name }}" maxlength='8'></td>
         <td><input data-id="{{ $room_player->id }}" data-column="hole_1" type="number" value="{{ $room_player->hole_1 }}"></td>
         <td><input data-id="{{ $room_player->id }}" data-column="hole_2" type="number" value="{{ $room_player->hole_2 }}"></td>
         <td><input data-id="{{ $room_player->id }}" data-column="hole_3" type="number" value="{{ $room_player->hole_3 }}"></td>
@@ -104,10 +104,10 @@ $(function(){
         column: column,
         data: data,
       }
-    }).done(function(res) {
+    }).done(function() {
       // 成功したときのコールバック
       console.log("Ajax成功");
-    }).fail(function(jqXHR, textStatus, errorThrown) {
+    }).fail(function() {
       // 失敗したときのコールバック
       console.log("Ajax失敗");
     }).always(function() {

@@ -24,30 +24,22 @@ class RoomController extends Controller
         $room_id = $room->id;
 
         //RoomPlayerにデータを挿入する
-        //1人目
-        $room_player_1 = RoomPlayer::create([
-          "name" => '名前を入力',
+        $players = [
+          ["name" => null,
           "room_id" => $room_id, //Roomから受け取ったid
-          "user_id" => 1,
-        ]);
-        //2人目
-        $room_player_2 = RoomPlayer::create([
-          "name" => '名前を入力',
-          "room_id" => $room_id,
-          "user_id" => 2,
-        ]);
-        //3人目
-        $room_player_3 = RoomPlayer::create([
-          "name" => '名前を入力',
-          "room_id" => $room_id,
-          "user_id" => 3,
-        ]);
-        //4人目
-        $room_player_4 = RoomPlayer::create([
-          "name" => '名前を入力',
-          "room_id" => $room_id,
-          "user_id" => 4,
-        ]);
+          "user_id" => 1],
+          ["name" => null,
+          "room_id" => $room_id, //Roomから受け取ったid
+          "user_id" => 2],
+          ["name" => null,
+          "room_id" => $room_id, //Roomから受け取ったid
+          "user_id" => 3],
+          ["name" => null,
+          "room_id" => $room_id, //Roomから受け取ったid
+          "user_id" => 4]
+        ];
+        $save_players = RoomPlayer::insert($players);
+
 
         return redirect()->route('room.into', [ "id" => $room_id ]);
     }
