@@ -56,7 +56,6 @@ Web上でスコアカードを簡単に共有し、組のメンバーの誰で�
 
 ## ER図
 ![スクリーンショット 2021-06-12 7 09 52](https://user-images.githubusercontent.com/78901624/121753409-42e29d00-cb4d-11eb-82d7-cc5ee7e34b26.png)
-![ER図](https://user-images.githubusercontent.com/78901624/120046262-c4fe9c00-c04c-11eb-88f7-e395432fb4cd.png)
 
 
 ## 工夫した点
