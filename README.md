@@ -1,3 +1,5 @@
+デプロイ済のバージョン
+
 # Golf Score Share （個人開発アプリ）
 ゴルフコースを回る際、一緒に回るメンバーが各々のスマホから共有のスコアカードを見たり、スコアを書き込めるアプリです。<br>
 http://golf-score-share.herokuapp.com/golf <br>
